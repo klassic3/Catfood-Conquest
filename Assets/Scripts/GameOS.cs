@@ -20,7 +20,7 @@ public class GameOS : MonoBehaviour
    
     public void RestartButton()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("MoonScene");
     }
     public void ExitButtton()
     {
