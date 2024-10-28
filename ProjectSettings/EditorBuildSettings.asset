@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TitleScene.unity
+    guid: e5eac3b73fec71a4ab4c4360226c697e
+  - enabled: 1
+    path: Assets/Scenes/MoonScene.unity
+    guid: c0fdf15977df892488359414c07645af
+  - enabled: 1
+    path: Assets/Scenes/GameOverScene.unity
+    guid: afcc653db37f42348b91e5b3d6f820c6
+  - enabled: 1
+    path: Assets/Scenes/IntroCutScene.unity
+    guid: bc5cfe3bf9a7a3e4d91a47e765cfe208
+  - enabled: 1
+    path: Assets/Scenes/MarsScene.unity
+    guid: e3ac8a39c61635047abc89b4f88d2cb0
+  m_configObjects: {}
