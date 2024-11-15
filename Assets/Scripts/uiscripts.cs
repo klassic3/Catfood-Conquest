@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class uiscripts : MonoBehaviour
 {
+    public GameObject howtoplayscreen;
     public int coinCount;
     public Text coinCounttext;
     // Start is called before the first frame update
@@ -36,4 +37,11 @@ public class uiscripts : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
+    public void howtoplayButton()
+    {
+        SceneManager.LoadScene("howtoplay");
+    }
+
+    
+
 }
