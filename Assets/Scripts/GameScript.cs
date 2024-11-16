@@ -15,9 +15,6 @@ public class GameScript : MonoBehaviour
     public Animator pauseanimation;
     public bool isPaused;
 
-    public GameObject loadScreen;
-    public bool isLoading;
-
     public GameObject poisonedScreen;
     public Text milkCounttextwithin;
 
@@ -50,7 +47,6 @@ public class GameScript : MonoBehaviour
         pauseScreen.SetActive(false);
         poisonedScreen.SetActive(false);
         isPaused = false;
-        isLoading = true;
         hideMilk();
         scoreincrement = 10;
     }
@@ -67,12 +63,6 @@ public class GameScript : MonoBehaviour
         }    
     }
 
-    public void loadend()
-    {
-        loadScreen.SetActive(false);
-        isPaused = false;
-        isLoading=false;
-    }
     public void moveRight()
     {
         if (isPaused == false)
