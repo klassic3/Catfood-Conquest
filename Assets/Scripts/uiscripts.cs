@@ -27,7 +27,7 @@ public class uiscripts : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("MoonScene");
+        SceneManager.LoadScene("LevelScene");
     }
     public void RestartButton()
     {

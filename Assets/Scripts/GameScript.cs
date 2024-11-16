@@ -49,7 +49,6 @@ public class GameScript : MonoBehaviour
         posison = 2;
         pauseScreen.SetActive(false);
         poisonedScreen.SetActive(false);
-        loadScreen.SetActive(true);
         isPaused = false;
         isLoading = true;
         hideMilk();
@@ -59,12 +58,6 @@ public class GameScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isLoading == true)
-        {
-            isPaused = true;
-            Invoke("loadend", 2.3f);
-            
-        }
         if (isPaused == false)
         {
             scoreincrement += 0.01f * Time.deltaTime;
