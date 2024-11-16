@@ -189,7 +189,7 @@ public class GameScript : MonoBehaviour
     public void ResumeAnim()
     {
         pauseanimation.SetTrigger("pauseclose");
-        Invoke("Resume", 0.8f);
+        Invoke("Resume", 0.4f);
     }
     public void Resume()
     {
