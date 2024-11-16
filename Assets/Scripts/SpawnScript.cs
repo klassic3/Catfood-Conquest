@@ -25,8 +25,8 @@ public class SpawnScript : MonoBehaviour
 
 
         coinNumber = 0;
-        lane1 = transform.position.x - 0.005f;
-        lane3 = transform.position.x + 0.005f;
+        lane1 = transform.position.x - 0.5f;
+        lane3 = transform.position.x + 0.5f;
     }
 
     // Update is called once per frame

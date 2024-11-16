@@ -21,7 +21,7 @@ public class RockScript : MonoBehaviour
 
         moveSpeed = spawner.moveSpeed;
 
-        if (transform.localPosition.x == -0.005f)
+        if (transform.localPosition.x < 0f)
         {
             lane = 1;
         }
@@ -29,7 +29,7 @@ public class RockScript : MonoBehaviour
         {
             lane = 2;
         }
-        else if (transform.localPosition.x == 0.005f)
+        else if (transform.localPosition.x > 0f)
         {
             lane = 3;
         }
