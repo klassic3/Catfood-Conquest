@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MarsScene.unity
     guid: e3ac8a39c61635047abc89b4f88d2cb0
   - enabled: 1
-    path: Assets/Scenes/howtoplay.unity
+    path: Assets/Scenes/HowtoPlayScene.unity
     guid: 2cea3399cf78f314c91a9e34235df17b
   - enabled: 1
     path: Assets/Scenes/LevelScene.unity

@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!114 &35493833
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!1 &79345056
@@ -479,14 +481,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 213968320}
         m_TargetAssemblyTypeName: uiscripts, Assembly-CSharp
-        m_MethodName: BackButton
-        m_Mode: 1
+        m_MethodName: changeScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: TitleScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &213968318
@@ -541,6 +543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!1 &822292746
@@ -5494,6 +5497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!1 &1031233551
@@ -5606,6 +5610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!114 &1031233556
@@ -5622,6 +5627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!114 &1031233557
@@ -5638,6 +5644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!114 &1031233558
@@ -5654,6 +5661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   howtoplayscreen: {fileID: 0}
   TitleScreen: {fileID: 0}
+  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!1 &1669313020

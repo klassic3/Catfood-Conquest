@@ -27,30 +27,9 @@ public class uiscripts : MonoBehaviour
         coinCount = data.coinCount;
         coinCounttext.text = coinCount.ToString();
     }
-    public void Play()
-    {
-        SceneManager.LoadScene("LevelScene");
-    }
-    public void RestartButton()
-    {
-        SceneManager.LoadScene("MoonScene");
-    }
-    public void ExitButtton()
-    {
-        SceneManager.LoadScene("TitleScene");
-    }
-    public void howtoplayButton()
-    {
-        SceneManager.LoadScene("howtoplay");
-    }
 
-    public void BackButton()
+    public void changeScene(string sceneName)
     {
-
-        SceneManager.LoadScene("TitleScene");
-    }
-    public void backbutton()
-    {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene(sceneName);
     }
 }
