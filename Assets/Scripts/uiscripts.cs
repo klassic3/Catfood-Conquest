@@ -53,5 +53,4 @@ public class uiscripts : MonoBehaviour
     {
         SceneManager.LoadScene("TitleScene");
     }
-
 }
