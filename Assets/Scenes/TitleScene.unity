@@ -6668,9 +6668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 780518382}
 --- !u!4 &1112264243
@@ -6964,9 +6961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
   coinCount: 0
   coinCounttext: {fileID: 0}
 --- !u!1 &1394741088
@@ -7544,7 +7538,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MoonScene
+          m_StringArgument: LevelScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2000186186

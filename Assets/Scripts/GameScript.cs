@@ -33,6 +33,9 @@ public class GameScript : MonoBehaviour
     public float scoreincrement;
     public Text scoretext;
 
+    public float highScore;
+
+
 
     public int posison;
 
@@ -118,6 +121,10 @@ public class GameScript : MonoBehaviour
     public void SaveCat()
     {
         coinCount += internalCoinCount;
+        if (score > highScore)
+        {
+            highScore = score;
+        }
         SaveScript.SaveCat(this);
     }
     [ContextMenu("Load")]
@@ -130,6 +137,7 @@ public class GameScript : MonoBehaviour
         catfoodCounttext.text = catfoodCount.ToString();
         milkCount = data.milkCount;
         milkCounttext.text = milkCount.ToString();
+        highScore = data.highScore;
     }
     [ContextMenu("Reset")]
     public void ResetCat()
@@ -154,7 +162,7 @@ public class GameScript : MonoBehaviour
     public void GIveup()
     {
         SaveCat();
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("GameOverScene");
     }
 
     [ContextMenu("Pause")]

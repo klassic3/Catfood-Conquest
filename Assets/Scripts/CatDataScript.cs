@@ -11,10 +11,13 @@ public class CatDataScript
 
     public int milkCount;
 
+    public float highScore;
+
     public CatDataScript (GameScript cat)
     {
         coinCount = cat.coinCount;
         catfoodCount = cat.catfoodCount;
         milkCount = cat.milkCount;
+        highScore = cat.highScore;
     }
 }
