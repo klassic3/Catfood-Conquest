@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class uiscripts : MonoBehaviour
+
 {
     public int coinCount;
     public Text coinCounttext;
@@ -41,8 +42,12 @@ public class uiscripts : MonoBehaviour
         }
     }
 
-    public void changeScene(string sceneName)
+    public class ButtonHandler : MonoBehaviour
     {
-        SceneManager.LoadScene(sceneName);
+        public void back()
+        {
+            SceneManager.LoadScene("TitleScene");
+        }
     }
+      
 }
