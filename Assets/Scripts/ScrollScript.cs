@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class ScrollScript : MonoBehaviour
+public class ScrollScript : MonoBehaviour, IEndDragHandler
 {
     [SerializeField] int maxPage;
     int currentPage;
@@ -13,10 +14,13 @@ public class ScrollScript : MonoBehaviour
     [SerializeField] float tweenTime;
     [SerializeField] LeanTweenType tweenType;
 
+    float dragThreshold;
+
     private void Awake()
     {
         currentPage = 1;
         targetPos = levelPagesRect.localPosition;
+        dragThreshold = Screen.width / 15;
     }
 
     public void Next()
@@ -42,5 +46,18 @@ public class ScrollScript : MonoBehaviour
     public void MovePage()
     {
         levelPagesRect.LeanMoveLocal(targetPos, tweenTime).setEase(tweenType);
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        if (Mathf.Abs(eventData.position.x - eventData.pressPosition.x) > dragThreshold)
+        {
+            if (eventData.position.x > eventData.pressPosition.x) Previous();
+            else Next();
+        }
+        else
+        {
+            MovePage();
+        }
     }
 }
