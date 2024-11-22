@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class uiscripts : MonoBehaviour
-
 {
 
     // Start is called before the first frame update
@@ -18,12 +17,8 @@ public class uiscripts : MonoBehaviour
 
     }
 
-    public class ButtonHandler : MonoBehaviour
+    public void changeScene(string sceneName)
     {
-        public void back()
-        {
-            SceneManager.LoadScene("TitleScene");
-        }
+        SceneManager.LoadScene(sceneName);
     }
-      
 }
