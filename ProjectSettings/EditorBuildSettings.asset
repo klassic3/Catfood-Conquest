@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MoonScene.unity
     guid: c0fdf15977df892488359414c07645af
   - enabled: 1
-    path: Assets/Scenes/ShopScene.unity
-    guid: 89c77ef677d99864caa98530001a85d1
-  - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: afcc653db37f42348b91e5b3d6f820c6
   - enabled: 1
