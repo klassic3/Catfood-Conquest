@@ -6964,6 +6964,7 @@ MonoBehaviour:
   coinCount: 0
   coinCounttext: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &1271443706
 GameObject:
   m_ObjectHideFlags: 0
@@ -7007,6 +7008,8 @@ RectTransform:
 >>>>>>> parent of b24298d (working on about us section)
 =======
 >>>>>>> parent of 0f09c3f (h)
+=======
+>>>>>>> parent of b24298d (working on about us section)
 --- !u!1 &1394741088
 GameObject:
   m_ObjectHideFlags: 0
@@ -7109,6 +7112,7 @@ RectTransform:
   - {fileID: 1451492610}
   - {fileID: 580482794}
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 1271443707}
 <<<<<<< HEAD
 =======
@@ -7117,6 +7121,8 @@ RectTransform:
 >>>>>>> parent of b24298d (working on about us section)
 =======
 >>>>>>> parent of 0f09c3f (h)
+=======
+>>>>>>> parent of b24298d (working on about us section)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
