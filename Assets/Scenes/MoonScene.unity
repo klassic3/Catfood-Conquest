@@ -4042,6 +4042,7 @@ MonoBehaviour:
   score: 0
   scoreincrement: 0
   scoretext: {fileID: 1793641736}
+  highScore: 0
   posison: 0
 --- !u!4 &1808390959
 Transform:
