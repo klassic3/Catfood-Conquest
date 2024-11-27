@@ -12,6 +12,7 @@ public class CoinCountScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         LoadCat();
     }
 
@@ -36,5 +37,12 @@ public class CoinCountScript : MonoBehaviour
 
     }
 
+    public void expense(int cost)
+    {
+        if (coinCount > cost)
+        {
+            LoadCat();
+        }
+    }
 }
 

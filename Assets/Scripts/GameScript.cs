@@ -116,15 +116,26 @@ public class GameScript : MonoBehaviour
         Milkdisplay.SetActive(false);
     }
 
-
-    [ContextMenu("Save")]
-    public void SaveCat()
+    public void EndGame()
     {
         coinCount += internalCoinCount;
         if (score > highScore)
         {
             highScore = score;
         }
+        SaveCat();
+    }
+
+    public void SpendCoin(int cost)
+    {
+        coinCount -= cost;
+        SaveCat();
+    }
+
+    [ContextMenu("Save")]
+    public void SaveCat()
+    {
+        
         SaveScript.SaveCat(this);
     }
     [ContextMenu("Load")]
@@ -161,9 +172,11 @@ public class GameScript : MonoBehaviour
     }
     public void GIveup()
     {
-        SaveCat();
+        EndGame();
         SceneManager.LoadScene("GameOverScene");
     }
+
+
 
     [ContextMenu("Pause")]
     public void Pause()
