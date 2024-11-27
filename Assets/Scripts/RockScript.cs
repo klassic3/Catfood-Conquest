@@ -80,7 +80,7 @@ public class RockScript : MonoBehaviour
     {
         
         Destroy(gameObject);
-        logic.SaveCat();
+        logic.EndGame();
         SceneManager.LoadScene("GameOverScene");
     }
 }
