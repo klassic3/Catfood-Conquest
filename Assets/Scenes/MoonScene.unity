@@ -2362,6 +2362,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068206880}
   m_CullTransparentMesh: 1
+--- !u!1 &1095231763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095231765}
+  - component: {fileID: 1095231764}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1095231764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095231763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4e717f2f72d50428146020b2badea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCount: 0
+  catfoodCount: 0
+  milkCount: 0
+  highScore: 0
+--- !u!4 &1095231765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095231763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 511.04538, y: 1054.5831, z: -0.5234434}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1095866040
 GameObject:
   m_ObjectHideFlags: 0
@@ -4044,6 +4092,7 @@ MonoBehaviour:
   scoretext: {fileID: 1793641736}
   highScore: 0
   posison: 0
+  playerInventory: {fileID: 1095231764}
 --- !u!4 &1808390959
 Transform:
   m_ObjectHideFlags: 0
@@ -5061,3 +5110,4 @@ SceneRoots:
   - {fileID: 1540487172}
   - {fileID: 1365740988}
   - {fileID: 2074289752}
+  - {fileID: 1095231765}

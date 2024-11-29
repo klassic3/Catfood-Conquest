@@ -13,7 +13,7 @@ public class CatDataScript
 
     public float highScore;
 
-    public CatDataScript (GameScript cat)
+    public CatDataScript (InventoryScript cat)
     {
         coinCount = cat.coinCount;
         catfoodCount = cat.catfoodCount;

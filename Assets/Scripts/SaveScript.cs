@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class SaveScript
 {
-    public static void SaveCat(GameScript cat)
+    public static void SaveCat(InventoryScript cat)
     {
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/cat.meow";
