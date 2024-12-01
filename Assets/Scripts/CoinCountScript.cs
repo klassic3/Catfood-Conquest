@@ -11,6 +11,10 @@ public class CoinCountScript : MonoBehaviour
     public GameObject alertDisplay;
 
 
+    public BuyButtonScript page1;
+    public BuyButtonScript page2;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,8 +49,16 @@ public class CoinCountScript : MonoBehaviour
         if (coinCount > cost)
         {
             InventoryScript.Instance.SpendCoin(cost);
+            if (cost == 1000)
+            {
+                page1.updateButton();
+            }
+            else if (cost == 2500)
+            {
+                page2.updateButton();
+            }
+            
             LoadCat();
-           
         }
         else
         {
@@ -58,6 +70,7 @@ public class CoinCountScript : MonoBehaviour
     {
         alertDisplay.SetActive(false);
     }
+
 
 }
 

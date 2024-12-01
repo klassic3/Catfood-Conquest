@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class InventoryScript : MonoBehaviour
     public int milkCount;
 
     public float highScore;
+
+    public bool ship1own;
+    public bool ship2own;
 
     void Start()
     {
@@ -71,5 +75,10 @@ public class InventoryScript : MonoBehaviour
         LoadCat();
         coinCount -= cost;
         SaveCat();
+    }
+    public void SaveShip(bool owned1, bool owned2)
+    {
+        ship1own = owned1;
+        ship2own = owned2;
     }
 }
