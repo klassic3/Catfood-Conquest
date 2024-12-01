@@ -21,4 +21,8 @@ public class uiscripts : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void back()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
 }

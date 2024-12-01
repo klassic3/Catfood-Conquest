@@ -239,11 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!114 &35493833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,11 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!1 &79345056
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,11 +531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!1 &822292746
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,8 +5427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.417, y: 90.3526}
-  m_SizeDelta: {x: 1072, y: 1017.8661}
+  m_AnchoredPosition: {x: -26.364998, y: 67.61395}
+  m_SizeDelta: {x: 1119.896, y: 1063.3434}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &987380033
 MonoBehaviour:
@@ -5465,7 +5450,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: faef37c18bef132468610030f068b226, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1ec0f4b26b2854a48977314e445953d9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5495,11 +5480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!1 &1031233551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5608,11 +5588,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!114 &1031233556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5625,11 +5600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!114 &1031233557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5642,11 +5612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!114 &1031233558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,11 +5624,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f55b690ddd77814bbaee1a78c040177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  howtoplayscreen: {fileID: 0}
-  TitleScreen: {fileID: 0}
-  Title: {fileID: 0}
-  coinCount: 0
-  coinCounttext: {fileID: 0}
 --- !u!1 &1669313020
 GameObject:
   m_ObjectHideFlags: 0
