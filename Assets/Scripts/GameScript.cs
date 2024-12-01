@@ -40,6 +40,8 @@ public class GameScript : MonoBehaviour
     public int posison;
 
 
+    public InventoryScript playerInventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -126,36 +128,39 @@ public class GameScript : MonoBehaviour
         SaveCat();
     }
 
-    public void SpendCoin(int cost)
-    {
-        coinCount -= cost;
-        SaveCat();
-    }
+  
 
     [ContextMenu("Save")]
     public void SaveCat()
     {
-        
-        SaveScript.SaveCat(this);
+        playerInventory.milkCount = milkCount;
+        playerInventory.catfoodCount = catfoodCount;
+        playerInventory.coinCount = coinCount;
+        playerInventory.highScore = highScore; 
+        playerInventory.SaveCat();
     }
     [ContextMenu("Load")]
     public void LoadCat()
     {
         CatDataScript data = SaveScript.LoadCat();
-        coinCount = data.coinCount;
+
+        playerInventory.LoadCat();
+        milkCount = playerInventory.milkCount;
+        catfoodCount = playerInventory.catfoodCount;
+        coinCount = playerInventory.coinCount;
+        highScore = playerInventory.highScore;
         coinCounttext.text = coinCount.ToString();
-        catfoodCount = data.catfoodCount;
         catfoodCounttext.text = catfoodCount.ToString();
-        milkCount = data.milkCount;
         milkCounttext.text = milkCount.ToString();
-        highScore = data.highScore;
     }
+
+
     [ContextMenu("Reset")]
     public void ResetCat()
     {
         coinCount = 0;
         coinCounttext.text = coinCount.ToString();
-        SaveScript.SaveCat(this);
+        SaveCat();
     }
 
     public void Poisoned()

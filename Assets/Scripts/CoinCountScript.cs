@@ -41,6 +41,7 @@ public class CoinCountScript : MonoBehaviour
     {
         if (coinCount > cost)
         {
+            InventoryScript.Instance.SpendCoin(10);
             LoadCat();
         }
     }
