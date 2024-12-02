@@ -20,6 +20,14 @@ public class CoinCountScript : MonoBehaviour
     {
         alertDisplay.SetActive(false);
         LoadCat();
+        if (InventoryScript.Instance.ship1own == true)
+        {
+            page1.updateButton();
+        }
+        if (InventoryScript.Instance.ship2own == true)
+        {
+            page2.updateButton();
+        }
     }
 
     // Update is called once per frame
@@ -52,10 +60,12 @@ public class CoinCountScript : MonoBehaviour
             if (cost == 1000)
             {
                 page1.updateButton();
+                InventoryScript.Instance.SaveShip(true, InventoryScript.Instance.ship2own);
             }
             else if (cost == 2500)
             {
                 page2.updateButton();
+                InventoryScript.Instance.SaveShip(InventoryScript.Instance.ship1own, true);
             }
             
             LoadCat();

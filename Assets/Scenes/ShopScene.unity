@@ -2953,6 +2953,7 @@ MonoBehaviour:
   alertDisplay: {fileID: 696211424}
   page1: {fileID: 261136703}
   page2: {fileID: 2237503}
+  inventory: {fileID: 1374162762}
 --- !u!114 &1558895034
 MonoBehaviour:
   m_ObjectHideFlags: 0
