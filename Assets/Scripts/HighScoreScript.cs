@@ -7,8 +7,12 @@ using UnityEngine.UI;
 public class HighScoreScript : MonoBehaviour
 {
 
-    public float highScore;
-    public Text highScoretext;
+    public float MoonhighScore;
+    public Text MoonhighScoretext;
+
+    public float MarshighScore;
+    public Text MarshighScoretext;
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,14 +31,15 @@ public class HighScoreScript : MonoBehaviour
         CatDataScript data = SaveScript.LoadCat();
         if (data != null)
         {
-            highScore = data.highScore;
+            MoonhighScore = data.highScore;
         }
         else
         {
-            highScore = 0;
+            MoonhighScore = 0;
         }
-        int roundedhighscore = (int)highScore;
-        highScoretext.text ="HighScore: " + roundedhighscore.ToString();
-
+        int roundedMoonhighscore = (int)MoonhighScore;
+        MoonhighScoretext.text ="HighScore: " + roundedMoonhighscore.ToString();
+        int roundedMarshighscore = (int)MarshighScore;
+        MarshighScoretext.text = "HighScore: " + roundedMarshighscore.ToString();
     }
 }
