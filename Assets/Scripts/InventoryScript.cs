@@ -14,7 +14,8 @@ public class InventoryScript : MonoBehaviour
 
     public int milkCount;
 
-    public float highScore;
+    public float MoonhighScore;
+    public float MarshighScore;
 
     public bool ship1own;
     public bool ship2own;
@@ -60,7 +61,13 @@ public class InventoryScript : MonoBehaviour
 
             milkCount = data.milkCount;
 
-            highScore = data.highScore;
+            MoonhighScore = data.MoonhighScore;
+
+            MarshighScore = data.MarshighScore;
+
+            ship1own = data.ship1own;
+
+            ship2own = data.ship2own;
 
             Debug.Log("Inventory loaded!");
         }
@@ -80,5 +87,6 @@ public class InventoryScript : MonoBehaviour
     {
         ship1own = owned1;
         ship2own = owned2;
+        SaveCat();
     }
 }

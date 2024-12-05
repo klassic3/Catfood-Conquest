@@ -31,7 +31,7 @@ public class HighScoreScript : MonoBehaviour
         CatDataScript data = SaveScript.LoadCat();
         if (data != null)
         {
-            MoonhighScore = data.highScore;
+            MoonhighScore = data.MoonhighScore;
         }
         else
         {

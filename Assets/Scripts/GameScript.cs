@@ -149,7 +149,7 @@ public class GameScript : MonoBehaviour
         playerInventory.milkCount = milkCount;
         playerInventory.catfoodCount = catfoodCount;
         playerInventory.coinCount = coinCount;
-        playerInventory.highScore = highScore; 
+        playerInventory.MoonhighScore = highScore; 
         playerInventory.SaveCat();
     }
     [ContextMenu("Load")]
@@ -161,7 +161,7 @@ public class GameScript : MonoBehaviour
         milkCount = playerInventory.milkCount;
         catfoodCount = playerInventory.catfoodCount;
         coinCount = playerInventory.coinCount;
-        highScore = playerInventory.highScore;
+        highScore = playerInventory.MoonhighScore;
         coinCounttext.text = coinCount.ToString();
         catfoodCounttext.text = catfoodCount.ToString();
         milkCounttext.text = milkCount.ToString();
