@@ -5931,12 +5931,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 780518380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4127fb87e4cd29147b91c5750de76b55, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bfa79439035bfc4f9ecb11412e8cec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coinCount: 0
   coinCounttext: {fileID: 780518382}
-  alertDisplay: {fileID: 1571253270}
 --- !u!1 &858686249
 GameObject:
   m_ObjectHideFlags: 0
@@ -7079,7 +7078,10 @@ MonoBehaviour:
   coinCount: 0
   catfoodCount: 0
   milkCount: 0
-  highScore: 0
+  MoonhighScore: 0
+  MarshighScore: 0
+  ship1own: 0
+  ship2own: 0
 --- !u!4 &1774267569
 Transform:
   m_ObjectHideFlags: 0

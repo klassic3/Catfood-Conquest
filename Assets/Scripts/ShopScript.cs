@@ -76,6 +76,13 @@ public class CoinCountScript : MonoBehaviour
             Invoke("hidealert", 2);
         }
     }
+
+    [ContextMenu("Sell")]
+
+    public void SellShip()
+    {
+        InventoryScript.Instance.SaveShip(false, false);
+    }
     public void hidealert()
     {
         alertDisplay.SetActive(false);

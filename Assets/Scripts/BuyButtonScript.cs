@@ -44,9 +44,12 @@ public class BuyButtonScript : MonoBehaviour
         
     }
 
-    [ContextMenu("Sell")]
+
     public void sellRocket()
     {
         owned = false;
+        buyButton.SetActive(true);
+        priceLabel.SetActive(true);
+        ownedLabel.SetActive(false);
     }
 }
