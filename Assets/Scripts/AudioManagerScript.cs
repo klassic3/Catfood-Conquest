@@ -9,25 +9,74 @@ public class AudioManagerScript : MonoBehaviour
     public AudioClip bgm_for_main;
     public AudioClip coin;
     public AudioClip foodgrab;
+    public AudioClip lobby_music;
+    public static AudioManagerScript Instance;
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
-        musicSource.clip = bgm_for_main;
-        musicSource.Play();
-       //for switching
-        // Create a temporary reference to the current scene.
-        Scene currentScene = SceneManager.GetActiveScene();
+        ////for switching
+        //// Create a temporary reference to the current scene.
+        //Scene currentScene = SceneManager.GetActiveScene();
 
-        // Retrieve the name of this scene.
+        //// Retrieve the name of this scene.
+        //string sceneName = currentScene.name;
+
+        //if (sceneName == "MoonScene")
+        //{
+
+        //    musicSource.clip = bgm_for_main;
+        //    musicSource.Play();
+
+        //}
+        //else
+        //{
+        //    musicSource.clip = lobby_music;
+        //    musicSource.Play();
+
+        //}
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        PlayMusicForCurrentScene();
+    }
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    private void PlayMusicForCurrentScene()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
-        /*if(sceneName== "GameOverScene")
+        if (sceneName == "MoonScene")
         {
-            
-            PlaySFX(deathsfx);
+            if (musicSource.clip != bgm_for_main)
+            {
+                musicSource.clip = bgm_for_main;
+                musicSource.Play();
+            }
+        }
+        else
+        {
+            if (musicSource.clip != lobby_music)
+            {
+                musicSource.clip = lobby_music;
+                musicSource.Play();
+            }
+        }
+    }
 
-        }*/
-
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        PlayMusicForCurrentScene();
     }
     public void PlaySFX(AudioClip clip)
     {
