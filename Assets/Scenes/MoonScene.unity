@@ -1154,6 +1154,7 @@ MonoBehaviour:
   BackgroundSpeed: 0.2
   BackgroundRenderer: {fileID: 587065915}
   logic: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!23 &587065915
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1851,6 +1852,7 @@ MonoBehaviour:
   milk: {fileID: 7894054022755630117, guid: f53a7735f6f5daa419b74a0b70055605, type: 3}
   logic: {fileID: 0}
   spawnRate: 2
+  difficultyFactor: 0.005
   moveSpeed: 4
 --- !u!4 &959198202
 Transform:
@@ -2394,7 +2396,10 @@ MonoBehaviour:
   coinCount: 0
   catfoodCount: 0
   milkCount: 0
-  highScore: 0
+  MoonhighScore: 0
+  MarshighScore: 0
+  ship1own: 0
+  ship2own: 0
 --- !u!4 &1095231765
 Transform:
   m_ObjectHideFlags: 0
@@ -2694,7 +2699,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -2, y: 100}
-  m_SizeDelta: {x: 519.7634, y: 97.4556}
+  m_SizeDelta: {x: 888.907, y: 97.4556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1265934597
 MonoBehaviour:
@@ -2729,7 +2734,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Continue?
+  m_Text: Use x Milk to Continue?
 --- !u!222 &1265934598
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4092,6 +4097,7 @@ MonoBehaviour:
   scoretext: {fileID: 1793641736}
   highScore: 0
   posison: 0
+  poisonText: {fileID: 1265934597}
   playerInventory: {fileID: 1095231764}
 --- !u!4 &1808390959
 Transform:
@@ -4361,6 +4367,7 @@ MonoBehaviour:
   BackgroundSpeed: 0.2
   BackgroundRenderer: {fileID: 1957706254}
   logic: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!135 &1957706253
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4989,6 +4996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2130788327}
   logic: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!4 &2130788326
 Transform:
   m_ObjectHideFlags: 0

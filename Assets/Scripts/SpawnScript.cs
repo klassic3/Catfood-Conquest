@@ -12,6 +12,7 @@ public class SpawnScript : MonoBehaviour
     public GameObject milk;
     public GameScript logic;
     [SerializeField] private float spawnRate;
+    [SerializeField] private float difficultyFactor;
     private float timer;
     private float coinNumber;
     public float moveSpeed;
@@ -23,8 +24,8 @@ public class SpawnScript : MonoBehaviour
     {
         logic = GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameScript>();
 
-
         coinNumber = 0;
+
         lane1 = transform.position.x - 0.5f;
         lane3 = transform.position.x + 0.5f;
     }
@@ -38,12 +39,12 @@ public class SpawnScript : MonoBehaviour
             //difficulty scaling
             if (spawnRate > 0.5)
             {
-                spawnRate -= 0.0005f * Time.deltaTime;
+                spawnRate -= difficultyFactor * Time.deltaTime;
             }
 
             if (moveSpeed < 9)
             {
-                moveSpeed += 0.0005f * Time.deltaTime;
+                moveSpeed += difficultyFactor * 2 * Time.deltaTime;
             }
 
             timer -= Time.deltaTime;

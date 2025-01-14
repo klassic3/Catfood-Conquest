@@ -35,9 +35,10 @@ public class GameScript : MonoBehaviour
 
     public float highScore;
 
-
+    private float revived;
 
     public int posison;
+    public Text poisonText;
 
 
     public InventoryScript playerInventory;
@@ -54,6 +55,7 @@ public class GameScript : MonoBehaviour
         isPaused = false;
         hideMilk();
         scoreincrement = 10;
+        revived = 0;
     }
 
     // Update is called once per frame
@@ -61,7 +63,7 @@ public class GameScript : MonoBehaviour
     {
         if (isPaused == false)
         {
-            scoreincrement += 0.01f * Time.deltaTime;
+            scoreincrement += 2f * Time.deltaTime;
 
             score +=  scoreincrement * Time.deltaTime;
             scoretext.text = ((int)score).ToString();
@@ -178,13 +180,15 @@ public class GameScript : MonoBehaviour
 
     public void Poisoned()
     {
+        poisonText.text = "Use " + (int)Mathf.Pow(2, revived) + "Milk to Continue?";
         poisonedScreen.SetActive(true);
         milkCounttextwithin.text = milkCount.ToString();
         isPaused = true;
     }
     public void Continue()
     {
-        milkCount -= 1;
+        milkCount -= (int)Mathf.Pow(2, revived);
+        revived += 1;
         poisonedScreen.SetActive(false);
         isPaused = false;
     }
