@@ -10,7 +10,7 @@ public class BuyButtonScript : MonoBehaviour
     public GameObject ownedLabel;
     public bool owned;
 
-    
+  
 
     public int coinCount;
     // Start is called before the first frame update
@@ -41,10 +41,12 @@ public class BuyButtonScript : MonoBehaviour
             buyButton.SetActive(false);
             priceLabel.SetActive(false);
             ownedLabel.SetActive(true);
-        
+         
+
     }
 
 
+    [ContextMenu("Sell Rocket")]
     public void sellRocket()
     {
         owned = false;

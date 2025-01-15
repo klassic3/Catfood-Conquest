@@ -134,7 +134,7 @@ public class GameScript : MonoBehaviour
     [ContextMenu("Infinite Money Glitch")]
     public void AddMoney()
     {
-        playerInventory.coinCount = 99999;
+        coinCount = 99999;
         playerInventory.SaveCat();
     }
 

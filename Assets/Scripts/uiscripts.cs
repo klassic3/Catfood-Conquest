@@ -2,10 +2,18 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class uiscripts : MonoBehaviour
 {
     [SerializeField] public GameObject soundPanel;
+    //for button audio
+    AudioManagerScript AudioManager;
+    private void Awake()
+    {
+        AudioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerScript>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +41,9 @@ public class uiscripts : MonoBehaviour
     public void soundPanelOff()
     {
         soundPanel.SetActive(false);
+    }
+    public void PlayButtonClickSFX()
+    {
+        AudioManager.PlaySFX(AudioManager.buttonClick);
     }
 }

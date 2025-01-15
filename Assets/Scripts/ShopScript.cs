@@ -13,7 +13,12 @@ public class CoinCountScript : MonoBehaviour
 
     public BuyButtonScript page1;
     public BuyButtonScript page2;
-    
+
+    AudioManagerScript AudioManager;
+    private void Awake()
+    {
+        AudioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManagerScript>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +62,7 @@ public class CoinCountScript : MonoBehaviour
         if (coinCount > cost)
         {
             InventoryScript.Instance.SpendCoin(cost);
+            AudioManager.PlaySFX(AudioManager.yay);
             if (cost == 1000)
             {
                 page1.updateButton();

@@ -11,6 +11,7 @@ public class AudioManagerScript : MonoBehaviour
     public AudioClip foodgrab;
     public AudioClip lobby_music;
     public AudioClip buttonClick;
+    public AudioClip yay;
 
     public static AudioManagerScript Instance;
     private void Awake()
