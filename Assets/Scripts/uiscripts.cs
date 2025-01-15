@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class uiscripts : MonoBehaviour
 {
+    [SerializeField] public GameObject soundPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -24,5 +25,13 @@ public class uiscripts : MonoBehaviour
     public void back()
     {
         SceneManager.LoadScene("TitleScene");
+    }
+    public void soundPanelShow()
+    {
+        soundPanel.SetActive(true);
+    }
+    public void soundPanelOff()
+    {
+        soundPanel.SetActive(false);
     }
 }

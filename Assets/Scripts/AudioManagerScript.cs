@@ -10,6 +10,8 @@ public class AudioManagerScript : MonoBehaviour
     public AudioClip coin;
     public AudioClip foodgrab;
     public AudioClip lobby_music;
+    public AudioClip buttonClick;
+
     public static AudioManagerScript Instance;
     private void Awake()
     {
@@ -80,7 +82,15 @@ public class AudioManagerScript : MonoBehaviour
     }
     public void PlaySFX(AudioClip clip)
     {
+        if (SFXSource.isPlaying)
+        {
+            SFXSource.Stop();
+        }
         SFXSource.PlayOneShot(clip);
 
+    }
+    public void PlayButtonClickSFX()
+    {
+        PlaySFX(buttonClick);
     }
 }
