@@ -1154,6 +1154,7 @@ MonoBehaviour:
   BackgroundSpeed: 0.2
   BackgroundRenderer: {fileID: 587065915}
   logic: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!23 &587065915
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2394,7 +2395,8 @@ MonoBehaviour:
   coinCount: 0
   catfoodCount: 0
   milkCount: 0
-  highScore: 0
+  MoonhighScore: 0
+  MarshighScore: 0
   ship1own: 0
   ship2own: 0
 --- !u!4 &1095231765
@@ -3477,6 +3479,9 @@ MonoBehaviour:
   bgm_for_main: {fileID: 8300000, guid: a33bdbb10f8f745488d039b997e706f7, type: 3}
   coin: {fileID: 8300000, guid: 7c5897c55ebbca04ba84d585ed37cd32, type: 3}
   foodgrab: {fileID: 8300000, guid: 7d06775a0d9402042a36da57c2106568, type: 3}
+  lobby_music: {fileID: 0}
+  buttonClick: {fileID: 0}
+  yay: {fileID: 0}
 --- !u!4 &1540487172
 Transform:
   m_ObjectHideFlags: 0
@@ -3606,6 +3611,37 @@ RectTransform:
   m_AnchoredPosition: {x: 315, y: 737}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1669153252
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1669153253}
+  m_Layer: 0
+  m_Name: MarsSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1669153253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669153252}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 504.09918, y: 1059.337, z: -6.382718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683204051
 GameObject:
   m_ObjectHideFlags: 0
@@ -4094,6 +4130,7 @@ MonoBehaviour:
   scoretext: {fileID: 1793641736}
   highScore: 0
   posison: 0
+  poisonText: {fileID: 0}
   playerInventory: {fileID: 1095231764}
 --- !u!4 &1808390959
 Transform:
@@ -4363,6 +4400,7 @@ MonoBehaviour:
   BackgroundSpeed: 0.2
   BackgroundRenderer: {fileID: 1957706254}
   logic: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!135 &1957706253
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4991,6 +5029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 2130788327}
   logic: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!4 &2130788326
 Transform:
   m_ObjectHideFlags: 0
@@ -5113,3 +5152,4 @@ SceneRoots:
   - {fileID: 1365740988}
   - {fileID: 2074289752}
   - {fileID: 1095231765}
+  - {fileID: 1669153253}

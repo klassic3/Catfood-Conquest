@@ -30,7 +30,8 @@ public class GameScript : MonoBehaviour
     public Text milkCounttext;
 
     public float score;
-    public float scoreincrement;
+    public float scoreIncrement;
+ 
     public Text scoretext;
 
     public float highScore;
@@ -43,9 +44,13 @@ public class GameScript : MonoBehaviour
 
     public InventoryScript playerInventory;
 
+    public SpawnScript spawner;
+
     // Start is called before the first frame update
     void Start()
     {
+        spawner = GameObject.FindGameObjectWithTag("SpawnLogic").GetComponent<SpawnScript>();
+
         LoadCat();
         internalCoinCount = 0;
         coinCounttext.text = internalCoinCount.ToString();
@@ -54,7 +59,7 @@ public class GameScript : MonoBehaviour
         poisonedScreen.SetActive(false);
         isPaused = false;
         hideMilk();
-        scoreincrement = 10;
+        scoreIncrement = 10;
         revived = 0;
     }
 
@@ -63,9 +68,14 @@ public class GameScript : MonoBehaviour
     {
         if (isPaused == false)
         {
-            scoreincrement += 2f * Time.deltaTime;
+            if (spawner != null)
+            {
+                float actualScoreIncrement = scoreIncrement * (spawner.moveSpeed/2);
 
-            score +=  scoreincrement * Time.deltaTime;
+                // Increase score based on the current score increment
+                score += actualScoreIncrement * Time.deltaTime;
+            }
+            
             scoretext.text = ((int)score).ToString();
         }    
     }

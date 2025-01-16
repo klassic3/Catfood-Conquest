@@ -26,6 +26,8 @@ public class SpawnScript : MonoBehaviour
     // Recent spawn tracking
     private Queue<string> recentSpawns = new Queue<string>();
 
+    [SerializeField]private float difficultyFactor = 1.0f;
+
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("GameLogic")?.GetComponent<GameScript>();
@@ -46,12 +48,11 @@ public class SpawnScript : MonoBehaviour
         if (logic == null || logic.isPaused) return;
 
         // Difficulty scaling
-        if (spawnRate > 0.5f) spawnRate -= 0.0005f * Time.deltaTime;
-        if (moveSpeed < 9f) moveSpeed += 0.0005f * Time.deltaTime;
+        if (spawnRate > 0.5f)
+            spawnRate -= 0.005f * difficultyFactor * Time.deltaTime;
+        if (moveSpeed < 9f)
+            moveSpeed += 0.01f * difficultyFactor * Time.deltaTime;
 
-        // Decrement cooldowns
-        if (foodCooldown > 0) foodCooldown--;
-        if (milkCooldown > 0) milkCooldown--;
 
         timer -= Time.deltaTime;
 
@@ -75,6 +76,10 @@ public class SpawnScript : MonoBehaviour
         int randomValue = Random.Range(1, 101);
         string spawnType = "";
 
+        // Decrement cooldowns
+        if (foodCooldown > 0) foodCooldown--;
+        if (milkCooldown > 0) milkCooldown--;
+
         if (randomValue <= 60)
         {
             // 40% chance for poison, rock, or coin
@@ -87,13 +92,13 @@ public class SpawnScript : MonoBehaviour
         {
             // 25% chance for food (if not on cooldown or recently spawned)
             spawnType = "food";
-            foodCooldown = 3; // Set cooldown for food
+            foodCooldown = 9; // Set cooldown for food
         }
         else if (randomValue > 85 && milkCooldown == 0 && !recentSpawns.Contains("milk"))
         {
             // 15% chance for milk (if not on cooldown or recently spawned)
             spawnType = "milk";
-            milkCooldown = 3; // Set cooldown for milk
+            milkCooldown = 17; // Set cooldown for milk
         }
 
         if (string.IsNullOrEmpty(spawnType))
