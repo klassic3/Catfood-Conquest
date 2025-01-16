@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class SpawnScript : MonoBehaviour
 {
@@ -11,191 +10,179 @@ public class SpawnScript : MonoBehaviour
     public GameObject rock;
     public GameObject milk;
     public GameScript logic;
-    [SerializeField] private float spawnRate;
-    [SerializeField] private float difficultyFactor;
+    [SerializeField] private float spawnRate = 1.0f;
     private float timer;
-    private float coinNumber;
-    public float moveSpeed;
+    private float coinNumber = 0;
+    public float moveSpeed = 3.0f;
 
     private float lane1;
+    private float lane2;
     private float lane3;
-    // Start is called before the first frame update
+
+    // Cooldown counters for rare items
+    private int foodCooldown = 0;
+    private int milkCooldown = 0;
+
+    // Recent spawn tracking
+    private Queue<string> recentSpawns = new Queue<string>();
+
     void Start()
     {
-        logic = GameObject.FindGameObjectWithTag("GameLogic").GetComponent<GameScript>();
-
-        coinNumber = 0;
+        logic = GameObject.FindGameObjectWithTag("GameLogic")?.GetComponent<GameScript>();
+        if (logic == null)
+        {
+            Debug.LogError("GameLogic object or GameScript component is missing!");
+        }
 
         lane1 = transform.position.x - 0.5f;
+        lane2 = transform.position.x;
         lane3 = transform.position.x + 0.5f;
+
+        timer = spawnRate;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //for pause logic
-        if (logic.isPaused == false)
+        if (logic == null || logic.isPaused) return;
+
+        // Difficulty scaling
+        if (spawnRate > 0.5f) spawnRate -= 0.0005f * Time.deltaTime;
+        if (moveSpeed < 9f) moveSpeed += 0.0005f * Time.deltaTime;
+
+        // Decrement cooldowns
+        if (foodCooldown > 0) foodCooldown--;
+        if (milkCooldown > 0) milkCooldown--;
+
+        timer -= Time.deltaTime;
+
+        if (timer <= 0)
         {
-            //difficulty scaling
-            if (spawnRate > 0.5)
-            {
-                spawnRate -= difficultyFactor * Time.deltaTime;
-            }
+            timer = spawnRate;
 
-            if (moveSpeed < 9)
-            {
-                moveSpeed += difficultyFactor * 2 * Time.deltaTime;
-            }
+            SpawnRandomItem();
 
-            timer -= Time.deltaTime;
-
-            if (timer <= 0)
-            {
-                timer = spawnRate;
-                int ra = Random.Range(1, 6);
-                if (ra == 1)
-                {
-                    spawnPoison();
-                }
-                else if (ra == 2)
-                {
-                    spawnCatFood();
-                }
-                else if (ra == 3)
-                {
-                    spawnCatCoin();
-                }
-                else if (ra == 4)
-                {
-                    spawnRocks();
-                }
-                else if (ra == 5)
-                {
-                    spawnMilk();
-                }
-            }
+            // Reset coin sequence logic
             if (coinNumber >= 3)
             {
                 CancelInvoke();
                 coinNumber = 0;
             }
         }
-        else
-        {
-            CancelInvoke();
-        }
-       
     }
 
-    void spawnPoison()
+    private void SpawnRandomItem()
     {
-        int r = Random.Range(1, 4);
-        if (r == 1)
-        {
-            Instantiate(poison, new Vector3(lane1, transform.position.y, 0), transform.rotation);
-        }
-        else if (r == 2)
-        {
-            Instantiate(poison, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
-        }
-        else if (r == 3)
-        {
-            Instantiate(poison, new Vector3(lane3, transform.position.y, 0), transform.rotation);
-        }
-    }
-    void spawnCatFood()
-    {
-        int r = Random.Range(1, 4);
-        if (r == 1)
-        {
-            Instantiate(catfood, new Vector3(lane1, transform.position.y, 0), transform.rotation);
+        int randomValue = Random.Range(1, 101);
+        string spawnType = "";
 
-        }
-        else if (r == 2)
+        if (randomValue <= 60)
         {
-            Instantiate(catfood, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
+            // 40% chance for poison, rock, or coin
+            int subRandom = Random.Range(1, 4);
+            if (subRandom == 1) spawnType = "poison";
+            else if (subRandom == 2) spawnType = "rock";
+            else spawnType = "coin";
         }
-        else if (r == 3)
+        else if (randomValue <= 85 && foodCooldown == 0 && !recentSpawns.Contains("food"))
         {
-            Instantiate(catfood, new Vector3(lane3, transform.position.y, 0), transform.rotation);
+            // 25% chance for food (if not on cooldown or recently spawned)
+            spawnType = "food";
+            foodCooldown = 3; // Set cooldown for food
         }
-    }
-    void spawnCatCoin()
-    {
-        int r = Random.Range(1, 4);
-        if (r == 1)
+        else if (randomValue > 85 && milkCooldown == 0 && !recentSpawns.Contains("milk"))
         {
-            InvokeRepeating("coin1", 0f, spawnRate/9f );
-            
+            // 15% chance for milk (if not on cooldown or recently spawned)
+            spawnType = "milk";
+            milkCooldown = 3; // Set cooldown for milk
         }
-        else if (r == 2)
+
+        if (string.IsNullOrEmpty(spawnType))
         {
-            InvokeRepeating("coin2", 0f, spawnRate / 9f);
+            // If no rare item can be spawned, fallback to common items
+            spawnType = Random.Range(1, 3) == 1 ? "poison" : "rock";
         }
-        else if (r == 3)
+
+        // Spawn the selected item
+        switch (spawnType)
         {
-            InvokeRepeating("coin3", 0f, spawnRate / 9f);
-            Debug.Log(spawnRate / 3f);
+            case "poison":
+                SpawnPoison();
+                break;
+            case "rock":
+                SpawnRocks();
+                break;
+            case "coin":
+                SpawnCatCoin();
+                break;
+            case "food":
+                SpawnCatFood();
+                break;
+            case "milk":
+                SpawnMilk();
+                break;
         }
-    }
-    void coin1()
-    {
-        Instantiate(catcoin, new Vector3(lane1, transform.position.y, 0), transform.rotation);
-        coinNumber++;
-    }
-    void coin2()
-    {
-        Instantiate(catcoin, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
-        coinNumber++;
-    }
-    void coin3()
-    {
-        Instantiate(catcoin, new Vector3(lane3, transform.position.y, 0), transform.rotation);
-        coinNumber++;
+
+        // Track recent spawns
+        recentSpawns.Enqueue(spawnType);
+        if (recentSpawns.Count > 3)
+        {
+            recentSpawns.Dequeue();
+        }
     }
 
-    void spawnCoin_sub()
+    private void SpawnPoison()
     {
-        timer -= Time.deltaTime;
+        Instantiate(poison, GetRandomLanePosition(), Quaternion.identity);
+    }
 
-        if (timer <= 0)
+    private void SpawnCatFood()
+    {
+        Instantiate(catfood, GetRandomLanePosition(), Quaternion.identity);
+    }
+
+    private void SpawnCatCoin()
+    {
+        StartCoroutine(SpawnCoinSequence());
+    }
+
+    private IEnumerator SpawnCoinSequence()
+    {
+        int laneIndex = Random.Range(1, 4);
+        float xPosition = laneIndex switch
         {
-            timer = 1;
+            1 => lane1,
+            2 => lane2,
+            3 => lane3,
+            _ => lane2,
+        };
 
+        for (int i = 0; i < 3; i++)
+        {
+            Instantiate(catcoin, new Vector3(xPosition, transform.position.y, 0), Quaternion.identity);
+            yield return new WaitForSeconds(spawnRate / 9f);
         }
     }
-    
 
-    void spawnRocks()
+    private void SpawnRocks()
     {
-        int r = Random.Range(1, 4);
-        if (r == 1)
-        {
-            Instantiate(rock, new Vector3(lane1, transform.position.y, 0), transform.rotation);
-        }
-        else if (r == 2)
-        {
-            Instantiate(rock, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
-        }
-        else if (r == 3)
-        {
-            Instantiate(rock, new Vector3(lane3, transform.position.y, 0), transform.rotation);
-        }
-    }  
-    void spawnMilk()
+        Instantiate(rock, GetRandomLanePosition(), Quaternion.identity);
+    }
+
+    private void SpawnMilk()
     {
-        int r = Random.Range(1, 4);
-        if (r == 1)
+        Instantiate(milk, GetRandomLanePosition(), Quaternion.identity);
+    }
+
+    private Vector3 GetRandomLanePosition()
+    {
+        int lane = Random.Range(1, 4);
+        float xPosition = lane switch
         {
-            Instantiate(milk, new Vector3(lane1, transform.position.y, 0), transform.rotation);
-        }
-        else if (r == 2)
-        {
-            Instantiate(milk, new Vector3(transform.position.x, transform.position.y, 0), transform.rotation);
-        }
-        else if (r == 3)
-        {
-            Instantiate(milk, new Vector3(lane3, transform.position.y, 0), transform.rotation);
-        }
+            1 => lane1,
+            2 => lane2,
+            3 => lane3,
+            _ => lane2,
+        };
+        return new Vector3(xPosition, transform.position.y, 0);
     }
 }
