@@ -19,6 +19,10 @@ public class SpawnScript : MonoBehaviour
     private float lane2;
     private float lane3;
 
+    private int[] laneCount = new int[3]; // To track the count of lane usage
+    private int previousLane = -1; // To store the previous lane picked
+    private const int maxRepeatCount = 3; // Maximum times a lane can be repeated
+
     // Cooldown counters for rare items
     private int foodCooldown = 0;
     private int milkCooldown = 0;
@@ -180,7 +184,28 @@ public class SpawnScript : MonoBehaviour
 
     private Vector3 GetRandomLanePosition()
     {
-        int lane = Random.Range(1, 4);
+        // Try to find a lane that hasn't been repeated too many times
+        int lane;
+        do
+        {
+            lane = Random.Range(1, 4); // Randomly pick a lane between 1 and 3
+
+        } while (lane == previousLane && laneCount[lane - 1] >= maxRepeatCount); // Prevent lane from repeating more than 3 times consecutively
+
+        // Update the lane count and previous lane
+        laneCount[lane - 1]++;
+        previousLane = lane;
+
+        // Ensure we reset lane counts if a lane is changed (to avoid high repetition)
+        for (int i = 0; i < laneCount.Length; i++)
+        {
+            if (i != (lane - 1))
+            {
+                laneCount[i] = 0; // Reset other lanes if we choose a new one
+            }
+        }
+
+        // Get the X position based on the selected lane
         float xPosition = lane switch
         {
             1 => lane1,
@@ -188,6 +213,8 @@ public class SpawnScript : MonoBehaviour
             3 => lane3,
             _ => lane2,
         };
+
         return new Vector3(xPosition, transform.position.y, 0);
     }
 }
+    

@@ -1816,6 +1816,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921727554}
   m_CullTransparentMesh: 1
+--- !u!1 &939651356
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939651357}
+  - component: {fileID: 939651359}
+  - component: {fileID: 939651358}
+  m_Layer: 5
+  m_Name: Pannel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &939651357
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939651356}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1095866041}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2, y: -16}
+  m_SizeDelta: {x: 978.5642, y: 894.305}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &939651358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939651356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 824439196752def449a936a98f265d53, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &939651359
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939651356}
+  m_CullTransparentMesh: 1
 --- !u!1 &959198200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,8 +1927,8 @@ MonoBehaviour:
   milk: {fileID: 7894054022755630117, guid: f53a7735f6f5daa419b74a0b70055605, type: 3}
   logic: {fileID: 0}
   spawnRate: 2
-  difficultyFactor: 0.005
   moveSpeed: 4
+  difficultyFactor: 0.005
 --- !u!4 &959198202
 Transform:
   m_ObjectHideFlags: 0
@@ -2425,14 +2500,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1095866041}
   - component: {fileID: 1095866043}
-  - component: {fileID: 1095866042}
   m_Layer: 5
   m_Name: MilkSave
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1095866041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2445,6 +2519,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 939651357}
   - {fileID: 1435299825}
   - {fileID: 801330939}
   - {fileID: 1265934596}
@@ -2457,36 +2532,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 59.61267}
   m_SizeDelta: {x: -129.0471, y: -1336.9915}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1095866042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1095866040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.36320752, g: 0.75826275, b: 1, a: 0.1764706}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1095866043
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3480,6 +3525,9 @@ MonoBehaviour:
   bgm_for_main: {fileID: 8300000, guid: a33bdbb10f8f745488d039b997e706f7, type: 3}
   coin: {fileID: 8300000, guid: 7c5897c55ebbca04ba84d585ed37cd32, type: 3}
   foodgrab: {fileID: 8300000, guid: 7d06775a0d9402042a36da57c2106568, type: 3}
+  lobby_music: {fileID: 0}
+  buttonClick: {fileID: 0}
+  yay: {fileID: 0}
 --- !u!4 &1540487172
 Transform:
   m_ObjectHideFlags: 0
@@ -3718,7 +3766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46, y: 690}
+  m_AnchoredPosition: {x: -56, y: 622}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1757958817
@@ -4093,12 +4141,13 @@ MonoBehaviour:
   milkCount: 0
   milkCounttext: {fileID: 2054761894}
   score: 0
-  scoreincrement: 0
+  scoreIncrement: 0
   scoretext: {fileID: 1793641736}
   highScore: 0
   posison: 0
   poisonText: {fileID: 1265934597}
   playerInventory: {fileID: 1095231764}
+  spawner: {fileID: 0}
 --- !u!4 &1808390959
 Transform:
   m_ObjectHideFlags: 0
