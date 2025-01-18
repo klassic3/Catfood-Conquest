@@ -151,7 +151,7 @@ public class GameScript : MonoBehaviour
     [ContextMenu("No Money Glitch")]
     public void LoseMoney()
     {
-        playerInventory.coinCount = 0;
+        coinCount = 0;
         playerInventory.SaveCat();
     }
 
@@ -161,7 +161,18 @@ public class GameScript : MonoBehaviour
         playerInventory.milkCount = milkCount;
         playerInventory.catfoodCount = catfoodCount;
         playerInventory.coinCount = coinCount;
-        playerInventory.MoonhighScore = highScore; 
+        if (SceneManager.GetActiveScene().name == "MoonScene")
+        {
+            playerInventory.MoonhighScore = highScore;  // Moon highscore
+        }
+        else if (SceneManager.GetActiveScene().name == "MarsScene")
+        {
+            playerInventory.MarshighScore = highScore;   // Mars highscore
+        }
+        else
+        {
+            Debug.Log("No scene found");
+        }
         playerInventory.SaveCat();
     }
     [ContextMenu("Load")]
@@ -173,7 +184,19 @@ public class GameScript : MonoBehaviour
         milkCount = playerInventory.milkCount;
         catfoodCount = playerInventory.catfoodCount;
         coinCount = playerInventory.coinCount;
-        highScore = playerInventory.MoonhighScore;
+        if (SceneManager.GetActiveScene().name == "MoonScene")
+        {
+            highScore = playerInventory.MoonhighScore;  // Moon highscore load
+        }
+        else if (SceneManager.GetActiveScene().name == "MarsScene")
+        {
+            highScore = playerInventory.MarshighScore;   // Mars highscore load
+        }
+        else
+        {
+            Debug.Log("No scene found");
+        }
+        
         coinCounttext.text = coinCount.ToString();
         catfoodCounttext.text = catfoodCount.ToString();
         milkCounttext.text = milkCount.ToString();

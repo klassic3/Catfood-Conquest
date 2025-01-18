@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SpawnScript : MonoBehaviour
@@ -30,7 +31,7 @@ public class SpawnScript : MonoBehaviour
     // Recent spawn tracking
     private Queue<string> recentSpawns = new Queue<string>();
 
-    [SerializeField]private float difficultyFactor = 1.0f;
+    [SerializeField]private float difficultyFactor;
 
     void Start()
     {
@@ -38,6 +39,19 @@ public class SpawnScript : MonoBehaviour
         if (logic == null)
         {
             Debug.LogError("GameLogic object or GameScript component is missing!");
+        }
+
+        if (SceneManager.GetActiveScene().name == "MoonScene")
+        {
+            difficultyFactor = 1.0f;  // Difficulty for MoonScene
+        }
+        else if (SceneManager.GetActiveScene().name == "MarsScene")
+        {
+            difficultyFactor = 2.0f;  // Difficulty for MarsScene
+        }
+        else
+        {
+            difficultyFactor = 1.0f;  // Default difficulty (if needed)
         }
 
         lane1 = transform.position.x - 0.5f;
@@ -107,8 +121,13 @@ public class SpawnScript : MonoBehaviour
 
         if (string.IsNullOrEmpty(spawnType))
         {
-            // If no rare item can be spawned, fallback to common items
-            spawnType = Random.Range(1, 3) == 1 ? "poison" : "rock";
+            // If no rare item can be spawned, fallback to common items: poison, rock, or coin
+            spawnType = Random.Range(1, 4) switch
+            {
+                1 => "poison",
+                2 => "rock",
+                _ => "coin", // Default to coin for the 3rd possibility
+            };
         }
 
         // Spawn the selected item

@@ -32,10 +32,12 @@ public class HighScoreScript : MonoBehaviour
         if (data != null)
         {
             MoonhighScore = data.MoonhighScore;
+            MarshighScore = data.MarshighScore;
         }
         else
         {
             MoonhighScore = 0;
+            MarshighScore= 0;
         }
         int roundedMoonhighscore = (int)MoonhighScore;
         MoonhighScoretext.text ="HighScore: " + roundedMoonhighscore.ToString();
