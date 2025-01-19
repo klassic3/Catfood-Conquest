@@ -94,9 +94,7 @@ public class SpawnScript : MonoBehaviour
         int randomValue = Random.Range(1, 101);
         string spawnType = "";
 
-        // Decrement cooldowns
-        if (foodCooldown > 0) foodCooldown--;
-        if (milkCooldown > 0) milkCooldown--;
+        
 
         if (randomValue <= 60)
         {
@@ -149,6 +147,10 @@ public class SpawnScript : MonoBehaviour
                 SpawnMilk();
                 break;
         }
+
+        // Decrement cooldowns
+        if (foodCooldown > 0) foodCooldown--;
+        if (milkCooldown > 0) milkCooldown--;
 
         // Track recent spawns
         recentSpawns.Enqueue(spawnType);
