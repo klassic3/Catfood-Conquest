@@ -30,7 +30,7 @@ A 2D endless runner game made using Unity Engine.
 
 🚀 Installation
 
-Option 1: Play the Web Build <br>
+Option 1: Download the apk <br>
 👉 [**Play Now**](https://drive.google.com/file/d/1j0GDQOndx46LiTD7RlT8brjA7BRhExSw/view?usp=sharing)
 
 Option 2: Run in Unity
