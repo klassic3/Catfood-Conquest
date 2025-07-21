@@ -1,10 +1,10 @@
-🎮 Catfood-Conquest 🐈
+## 🎮 Catfood-Conquest 🐈
 
 A 2D endless runner game made using Unity Engine.
 
 <br>
 
-📖 Table of Contents
+## 📖 Table of Contents
 - About
 - Gameplay
 - Installation
@@ -13,13 +13,13 @@ A 2D endless runner game made using Unity Engine.
 
 <br>
 
-📌 About 
+## 📌 About 
 
 **CatFood Conquest** is a Unity-powered 2D endleess runner game where players control a cat as it ventures across space trying to collect catfood and coins while dodging obstacles as the difficulty rises along the way. Designed for mobile, the game is meant as a learning project for procedural generation, basic physics, and mobile-ready UI in Unity.
 
 <br>
 
-🕹️ Gameplay
+## 🕹️ Gameplay
 - The player runs forward automatically.
 - Move sideways to avoid obstacles and collect valuables.
 - The game gradually increases in speed.
@@ -28,7 +28,7 @@ A 2D endless runner game made using Unity Engine.
 
 <br>
 
-🚀 Installation
+## 🚀 Installation
 
 Option 1: Download the apk <br>
 👉 [**Play Now**](https://drive.google.com/file/d/1j0GDQOndx46LiTD7RlT8brjA7BRhExSw/view?usp=sharing)
@@ -40,7 +40,7 @@ Option 2: Run in Unity
 
 <br>
 
-🎮 Controls
+## 🎮 Controls
 
 | Action    | Mobile Touch Controls               |
 | --------- | ----------------------------------- |
@@ -49,5 +49,5 @@ Option 2: Run in Unity
 
 <br>
 
-📄 License
+## 📄 License
 MIT ©  [**Chris Maharjan**](www.linkedin.com/in/chris-maharjan-4b2580283), [**Palishma Shakya**](https://www.linkedin.com/in/palishma-shakya-9a622529a/)
